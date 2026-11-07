@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Enrolled Courses | Online Course Learning Management System</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/navbar.css">
+    <link rel="stylesheet" href="/public/css/dashboard.css">
+    <link rel="stylesheet" href="/public/css/responsive.css">
+</head>
+<body style="background-color: #f8fafc;">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="brand-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Learn<span>Hub</span></span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="/">Home</a>
+                <a href="/courses.html">Browse Catalog</a>
+                <a href="/my-courses.html" class="active">My Courses</a>
+                <a href="/student-dashboard.html">Student Portal</a>
+            </nav>
+            <div class="nav-actions" id="navActions"></div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="page-container">
+        <!-- Header -->
+        <div class="section-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+            <div>
+                <span class="badge badge-purple" style="margin-bottom:8px;">Learning Journey</span>
+                <h1 class="section-title" style="margin:0;">My Courses & Progress</h1>
+                <p class="section-subtitle">Pick up right where you left off or review past lessons anytime.</p>
+            </div>
+            <a href="/courses.html" class="btn btn-outline-purple">+ Enroll in More Courses</a>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-pills" style="margin-bottom: 30px;">
+            <button class="filter-pill my-courses-tab active" data-filter="all">All Enrolled</button>
+            <button class="filter-pill my-courses-tab" data-filter="in_progress">In Progress</button>
+            <button class="filter-pill my-courses-tab" data-filter="completed">Completed (100%)</button>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="course-grid" id="myCoursesGrid">
+            <!-- Dynamically populated via public/js/dashboard.js -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+            <div>&copy; 2026 Online Course Learning Management System.</div>
+            <div class="developer-credit">
+                Project Title: <strong>Online Course Learning Management System</strong> | Developed by <strong>Lokesh Yadav</strong>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/public/js/main.js"></script>
+    <script src="/public/js/dashboard.js"></script>
+</body>
+</html>

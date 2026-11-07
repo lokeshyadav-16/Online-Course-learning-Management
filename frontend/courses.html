@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Catalog | Online Course Learning Management System</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/navbar.css">
+    <link rel="stylesheet" href="/public/css/responsive.css">
+</head>
+<body style="background-color: #f8fafc;">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="brand-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Learn<span>Hub</span></span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="/">Home</a>
+                <a href="/courses.html" class="active">Course Catalog</a>
+                <a href="/my-courses.html">My Courses</a>
+                <a href="/student-dashboard.html">Student Portal</a>
+            </nav>
+            <div class="nav-actions" id="navActions"></div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="page-container">
+        <!-- Catalog Header -->
+        <div class="section-header text-center" style="margin-bottom: 30px;">
+            <span class="badge badge-purple" style="margin-bottom: 10px;">Certified Curriculum</span>
+            <h1 class="section-title">Explore Tech & Software Engineering Courses</h1>
+            <p class="section-subtitle">Find practical, project-based courses structured to help you master modern full-stack development, database architecture, and frontend design.</p>
+        </div>
+
+        <!-- Search & Filter Toolbar -->
+        <div class="catalog-toolbar">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="courseSearchInput" placeholder="Search by course title, keywords, or topics..." class="form-control">
+            </div>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="filter-pills" id="categoryFilterPills">
+            <button class="filter-pill active" data-category="All">All Tracks</button>
+            <button class="filter-pill" data-category="Web Development">Web Development</button>
+            <button class="filter-pill" data-category="Databases">Databases & SQL</button>
+            <button class="filter-pill" data-category="JavaScript">JavaScript & Node.js</button>
+            <button class="filter-pill" data-category="Design">Design & CSS</button>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="course-grid" id="catalogCoursesGrid">
+            <!-- Dynamically populated via public/js/courses.js -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+            <div>&copy; 2026 Online Course Learning Management System.</div>
+            <div class="developer-credit">
+                Project Title: <strong>Online Course Learning Management System</strong> | Developed by <strong>Lokesh Yadav</strong>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/public/js/main.js"></script>
+    <script src="/public/js/courses.js"></script>
+</body>
+</html>

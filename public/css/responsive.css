@@ -1,0 +1,132 @@
+/* =========================================================
+   Online Course Learning Management System - Responsive Queries
+   Project Owner: Lokesh Yadav
+   ========================================================= */
+
+@media (max-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .course-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-sidebar-widget {
+        position: static;
+    }
+
+    .classroom-layout {
+        grid-template-columns: 1fr;
+        height: auto;
+        overflow: visible;
+    }
+
+    .classroom-sidebar {
+        border-left: none;
+        border-top: 1px solid var(--card-border);
+        max-height: 400px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        border-bottom: 1px solid var(--card-border);
+        padding: 24px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .nav-links.show {
+        display: flex;
+        position: static;
+        width: 100%;
+        order: 5;
+        box-shadow: none;
+        border-bottom: none;
+        padding: 12px 0 4px;
+    }
+
+    .nav-actions {
+        display: flex;
+        margin-left: auto;
+        gap: 8px;
+    }
+
+    .nav-container.menu-open .nav-actions {
+        width: 100%;
+        margin-left: 0;
+        order: 6;
+        padding-bottom: 8px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.3rem;
+    }
+
+    .dashboard-layout {
+        flex-direction: column;
+    }
+
+    .dashboard-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--card-border);
+        padding: 20px;
+    }
+
+    .dashboard-main {
+        padding: 24px 16px;
+    }
+
+    .dashboard-header-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}

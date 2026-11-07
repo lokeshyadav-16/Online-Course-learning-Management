@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Dashboard | Online Course Learning Management System</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/navbar.css">
+    <link rel="stylesheet" href="/public/css/dashboard.css">
+    <link rel="stylesheet" href="/public/css/responsive.css">
+    <style>
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+        .modal-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 650px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-hover);
+            border: 1px solid var(--card-border);
+            padding: 30px;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .modal-header h3 {
+            font-size: 1.35rem;
+            color: var(--navy-900);
+            margin: 0;
+        }
+        .modal-close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+        .lesson-row-card {
+            background: #f8fafc;
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            padding: 14px 18px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .seq-badge {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--purple-100);
+            color: var(--purple-700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body style="background-color: #f8fafc;">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="brand-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Learn<span>Hub</span> <small class="badge badge-purple" style="font-size:0.7rem;">Instructor</small></span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="/">Home</a>
+                <a href="/courses.html">Catalog</a>
+                <a href="/my-courses.html">My Courses</a>
+                <a href="/instructor-dashboard.html" class="active">Instructor Portal</a>
+            </nav>
+            <div class="nav-actions" id="navActions"></div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-profile-card">
+                <div class="sidebar-avatar" style="background:linear-gradient(135deg, #0f172a 0%, #334155 100%);">👨‍🏫</div>
+                <div class="sidebar-profile-info">
+                    <h4 id="instructorProfileName">Lokesh Yadav</h4>
+                    <span>Lead Instructor</span>
+                </div>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <a href="/instructor-dashboard.html">
+                        <span class="menu-icon">📊</span> Course Management
+                    </a>
+                </li>
+                <li>
+                    <a href="/create-course.html">
+                        <span class="menu-icon">➕</span> Create New Course
+                    </a>
+                </li>
+                <li>
+                    <a href="/courses.html">
+                        <span class="menu-icon">🌐</span> Public Course Catalog
+                    </a>
+                </li>
+                <li>
+                    <a href="/student-dashboard.html">
+                        <span class="menu-icon">🎓</span> Student View
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="/" class="btn btn-secondary btn-sm btn-block">← Return Home</a>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard Content -->
+        <main class="dashboard-main">
+            <div class="dashboard-header-banner" style="background:linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);">
+                <div>
+                    <h2>Instructor Studio & Curriculum Management</h2>
+                    <p>Create courses, edit curriculum details, upload lessons, arrange sequences, and track enrollments.</p>
+                </div>
+                <a href="/create-course.html" class="btn btn-primary btn-large">+ Create New Course</a>
+            </div>
+
+            <!-- Instructor Metrics -->
+            <div class="metrics-row">
+                <div class="metric-card">
+                    <div class="metric-icon-box">📚</div>
+                    <div class="metric-data">
+                        <div class="metric-val" id="statInstCourses">0</div>
+                        <div class="metric-title">Published Courses</div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon-box" style="background:#e0e7ff; color:#4338ca;">👥</div>
+                    <div class="metric-data">
+                        <div class="metric-val" id="statInstStudents">0</div>
+                        <div class="metric-title">Enrolled Students</div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon-box" style="background:#d1fae5; color:#065f46;">💰</div>
+                    <div class="metric-data">
+                        <div class="metric-val" id="statInstEarnings">$5,920</div>
+                        <div class="metric-title">Curriculum Impact</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Table Card -->
+            <div class="content-card">
+                <div class="content-card-header">
+                    <div>
+                        <h3>My Created Courses</h3>
+                        <p class="text-muted" style="font-size:0.88rem;">Manage lessons, edit course details, or arrange lesson sequences</p>
+                    </div>
+                    <a href="/create-course.html" class="btn btn-primary btn-sm">+ New Course</a>
+                </div>
+
+                <div class="custom-table-wrapper">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Lessons</th>
+                                <th>Description</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="instructorCoursesTableBody">
+                            <!-- Populated dynamically via public/js/dashboard.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL 1: Edit Course Modal -->
+    <div id="editCourseModal" class="modal-overlay d-none">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Edit Course Details</h3>
+                <button type="button" class="modal-close-btn" id="closeEditCourseModalBtn">&times;</button>
+            </div>
+            <form id="editCourseForm">
+                <input type="hidden" id="editCourseId">
+                <div class="form-group">
+                    <label for="editCourseTitle">Course Title *</label>
+                    <input type="text" id="editCourseTitle" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="editCourseDesc">Course Description</label>
+                    <textarea id="editCourseDesc" rows="4" class="form-control"></textarea>
+                </div>
+                <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px;">
+                    <button type="button" class="btn btn-secondary" id="cancelEditCourseModalBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="saveCourseChangesBtn">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: Manage Lessons & Arrange Sequence Modal -->
+    <div id="manageLessonsModal" class="modal-overlay d-none">
+        <div class="modal-card" style="max-width: 750px;">
+            <div class="modal-header">
+                <div>
+                    <h3 id="manageLessonsModalTitle">Manage Course Lessons</h3>
+                    <span class="text-muted" style="font-size:0.85rem;" id="manageLessonsCourseSubtitle">Add, edit, rearrange sequence, or remove lessons</span>
+                </div>
+                <button type="button" class="modal-close-btn" id="closeManageLessonsModalBtn">&times;</button>
+            </div>
+
+            <!-- Form: Add or Edit Lesson -->
+            <div style="background:#f1f5f9; padding:20px; border-radius:12px; margin-bottom:24px; border:1px solid var(--card-border);">
+                <h4 style="margin-bottom:12px; color:var(--navy-900);" id="lessonFormHeader">➕ Add New Lesson</h4>
+                <form id="lessonUpsertForm">
+                    <input type="hidden" id="upsertCourseId">
+                    <input type="hidden" id="upsertLessonId">
+
+                    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:12px;">
+                        <div class="form-group" style="margin-bottom:12px;">
+                            <label for="lessonTitleInput">Lesson Title *</label>
+                            <input type="text" id="lessonTitleInput" required placeholder="e.g. Introduction to Routing" class="form-control">
+                        </div>
+                        <div class="form-group" style="margin-bottom:12px;">
+                            <label for="lessonSequenceInput">Sequence No.</label>
+                            <input type="number" id="lessonSequenceInput" min="1" placeholder="Auto" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label for="lessonVideoInput">Video Lecture URL (YouTube Embed / MP4)</label>
+                        <input type="url" id="lessonVideoInput" placeholder="https://www.youtube.com/embed/..." class="form-control">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:12px;">
+                        <label for="lessonContentInput">Lesson Notes & Material Content</label>
+                        <textarea id="lessonContentInput" rows="3" placeholder="Provide summary notes, references, or instructions..." class="form-control"></textarea>
+                    </div>
+
+                    <div style="display:flex; justify-content:flex-end; gap:8px;">
+                        <button type="button" id="resetLessonFormBtn" class="btn btn-secondary btn-sm d-none">Cancel Edit</button>
+                        <button type="submit" id="saveLessonBtn" class="btn btn-primary btn-sm">Add Lesson</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Existing Lessons List -->
+            <h4 style="margin-bottom:12px; color:var(--navy-900);">Current Curriculum Lessons</h4>
+            <div id="lessonsListContainer" style="max-height: 320px; overflow-y: auto;">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+            <div>&copy; 2026 Online Course Learning Management System.</div>
+            <div class="developer-credit">
+                Project Title: <strong>Online Course Learning Management System</strong> | Developed by <strong>Lokesh Yadav</strong>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/public/js/main.js"></script>
+    <script src="/public/js/dashboard.js"></script>
+</body>
+</html>

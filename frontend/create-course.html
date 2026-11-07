@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Course | Online Course Learning Management System</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/navbar.css">
+    <link rel="stylesheet" href="/public/css/dashboard.css">
+    <link rel="stylesheet" href="/public/css/responsive.css">
+</head>
+<body style="background-color: #f8fafc;">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="brand-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Learn<span>Hub</span> <small class="badge badge-purple" style="font-size:0.7rem;">Instructor</small></span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="/">Home</a>
+                <a href="/courses.html">Catalog</a>
+                <a href="/instructor-dashboard.html" class="active">Instructor Portal</a>
+            </nav>
+            <div class="nav-actions" id="navActions"></div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-profile-card">
+                <div class="sidebar-avatar" style="background:linear-gradient(135deg, #0f172a 0%, #334155 100%);">👨‍🏫</div>
+                <div class="sidebar-profile-info">
+                    <h4>Lokesh Yadav</h4>
+                    <span>Lead Instructor</span>
+                </div>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="/instructor-dashboard.html">
+                        <span class="menu-icon">📊</span> Course Management
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="/create-course.html">
+                        <span class="menu-icon">➕</span> Create New Course
+                    </a>
+                </li>
+                <li>
+                    <a href="/courses.html">
+                        <span class="menu-icon">🌐</span> Public Catalog
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="/" class="btn btn-secondary btn-sm btn-block">← Return Home</a>
+            </div>
+        </aside>
+
+        <!-- Main Form Area -->
+        <main class="dashboard-main">
+            <div class="dashboard-header-banner" style="background:linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);">
+                <div>
+                    <h2>Publish a New Curriculum Course</h2>
+                    <p>Enter title and description to make your course accessible to students worldwide.</p>
+                </div>
+                <a href="/instructor-dashboard.html" class="btn btn-secondary btn-sm">← Back to Overview</a>
+            </div>
+
+            <div class="content-card" style="max-width: 800px;">
+                <form id="createCourseForm">
+                    <div class="form-group">
+                        <label for="courseTitle">Course Title *</label>
+                        <input type="text" id="courseTitle" name="title" required placeholder="e.g. Master Node.js & MySQL From Scratch" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="courseDescription">Course Description *</label>
+                        <textarea id="courseDescription" name="description" rows="6" required placeholder="Write a detailed course summary, prerequisites, and learning outcomes..." class="form-control"></textarea>
+                    </div>
+
+                    <div style="display:flex; gap:12px; margin-top:25px;">
+                        <button type="submit" id="publishCourseBtn" class="btn btn-primary btn-large">
+                            Publish Course Now
+                        </button>
+                        <a href="/instructor-dashboard.html" class="btn btn-secondary btn-large">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+            <div>&copy; 2026 Online Course Learning Management System.</div>
+            <div class="developer-credit">
+                Project Title: <strong>Online Course Learning Management System</strong> | Developed by <strong>Lokesh Yadav</strong>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/public/js/main.js"></script>
+    <script src="/public/js/dashboard.js"></script>
+</body>
+</html>

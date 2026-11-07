@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Course Learning Management System | Home</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/navbar.css">
+    <link rel="stylesheet" href="/public/css/responsive.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="brand-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Learn<span>Hub</span></span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="/" class="active">Home</a>
+                <a href="/courses.html">Course Catalog</a>
+                <a href="/my-courses.html">My Courses</a>
+                <a href="/student-dashboard.html">Student Dashboard</a>
+                <a href="/instructor-dashboard.html">Instructor Portal</a>
+            </nav>
+            <div class="nav-actions" id="navActions">
+                <a href="/login.html" class="btn btn-secondary btn-sm">Sign In</a>
+                <a href="/register.html" class="btn btn-primary btn-sm">Get Started</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-wrapper">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge" style="background: rgba(167, 139, 250, 0.2); color: #c4b5fd; border: 1px solid rgba(167, 139, 250, 0.3);">
+                    🚀 Next-Gen Online Learning Experience
+                </span>
+                <h1>Master In-Demand Tech Skills With <span class="gradient-text">Real-World Projects</span></h1>
+                <p>Access certified curriculum designed by industry experts. Track your lesson progress step-by-step, stream instructional videos, and launch your career in modern software engineering.</p>
+                <div class="hero-buttons">
+                    <a href="/courses.html" class="btn btn-primary btn-large">Explore Course Catalog</a>
+                    <a href="/instructor-dashboard.html" class="btn btn-secondary btn-large">Teach On LearnHub</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">50<span>+</span></span>
+                        <span class="stat-label">Industry Courses</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">12<span>k+</span></span>
+                        <span class="stat-label">Active Learners</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">98<span>%</span></span>
+                        <span class="stat-label">Completion Rate</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="preview-card">
+                    <div class="preview-card-header">
+                        <div class="preview-avatar">👨‍💻</div>
+                        <div>
+                            <h4 style="color:#ffffff; font-size:1.05rem;">Featured Curriculum</h4>
+                            <span style="font-size:0.8rem; color:#94a3b8;">Instructor: Lokesh Yadav</span>
+                        </div>
+                    </div>
+                    <div style="background:#0f172a; padding:18px; border-radius:12px; margin-bottom:16px;">
+                        <span class="badge badge-purple" style="margin-bottom:8px;">Full-Stack Node & MySQL</span>
+                        <h4 style="color:#ffffff; font-size:1.15rem; margin-bottom:10px;">Modern Web Architecture</h4>
+                        <div class="progress-container">
+                            <div class="progress-bar-fill" style="width: 75%;"></div>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:#94a3b8; margin-top:6px;">
+                            <span>Progress</span>
+                            <span style="color:#c084fc; font-weight:700;">75% Completed</span>
+                        </div>
+                    </div>
+                    <a href="/course-details.html?id=1" class="btn btn-primary btn-block btn-sm">Preview Course & Syllabus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Platform Features -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Built for Modern Learners & Instructors</h2>
+                <p class="section-subtitle">Everything you need to excel in self-paced learning, track lesson progression, and build technical portfolios.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">📚</div>
+                    <h3>Structured Curriculum</h3>
+                    <p>Modular lessons organized sequentially with duration indicators, downloadable resources, and exercises.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">📈</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Live progress bars monitor your enrolled courses and update instantly as you complete each lesson.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🎬</div>
+                    <h3>High-Definition Classroom</h3>
+                    <p>Distraction-free learning interface with responsive video streaming and integrated lecture notes.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instructor Management</h3>
+                    <p>Instructors can publish new courses, structure lessons, and track student enrollment analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses Section -->
+    <section style="padding: 30px 0 80px;">
+        <div class="container">
+            <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end;">
+                <div>
+                    <span class="badge badge-purple" style="margin-bottom:8px;">Curated Tracks</span>
+                    <h2 class="section-title" style="margin:0;">Featured Courses</h2>
+                </div>
+                <a href="/courses.html" class="btn btn-outline-purple">View All Courses →</a>
+            </div>
+            <div class="course-grid" id="featuredCoursesGrid">
+                <!-- Dynamically rendered via public/js/courses.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-top">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>🎓 Learn<span>Hub</span></h3>
+                    <p>Online Course Learning Management System — empowering instructors to publish curriculum and students to track their educational milestones.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/courses.html">Course Catalog</a></li>
+                        <li><a href="/my-courses.html">My Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Portals</h4>
+                    <ul>
+                        <li><a href="/student-dashboard.html">Student Dashboard</a></li>
+                        <li><a href="/instructor-dashboard.html">Instructor Portal</a></li>
+                        <li><a href="/login.html">Sign In</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Technology</h4>
+                    <ul>
+                        <li>Node.js & Express.js</li>
+                        <li>MySQL Relational DB</li>
+                        <li>Vanilla JavaScript & CSS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <div>
+                &copy; 2026 Online Course Learning Management System. All rights reserved.
+            </div>
+            <div class="developer-credit">
+                Project Title: <strong>Online Course Learning Management System</strong> | Developed by <strong>Lokesh Yadav</strong>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/public/js/main.js"></script>
+    <script src="/public/js/courses.js"></script>
+</body>
+</html>

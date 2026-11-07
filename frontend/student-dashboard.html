@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | Online Course Learning Management System</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/navbar.css">
+    <link rel="stylesheet" href="/public/css/dashboard.css">
+    <link rel="stylesheet" href="/public/css/responsive.css">
+</head>
+<body style="background-color: #f8fafc;">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="brand-logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Learn<span>Hub</span></span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="/">Home</a>
+                <a href="/courses.html">Browse Catalog</a>
+                <a href="/my-courses.html">My Courses</a>
+                <a href="/student-dashboard.html" class="active">Student Portal</a>
+            </nav>
+            <div class="nav-actions" id="navActions"></div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-profile-card">
+                <div class="sidebar-avatar">👨‍🎓</div>
+                <div class="sidebar-profile-info">
+                    <h4>Student Portal</h4>
+                    <span>Active Learner</span>
+                </div>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <a href="/student-dashboard.html">
+                        <span class="menu-icon">📊</span> Dashboard Overview
+                    </a>
+                </li>
+                <li>
+                    <a href="/my-courses.html">
+                        <span class="menu-icon">📖</span> My Courses & Progress
+                    </a>
+                </li>
+                <li>
+                    <a href="/courses.html">
+                        <span class="menu-icon">🔍</span> Explore New Courses
+                    </a>
+                </li>
+                <li>
+                    <a href="/instructor-dashboard.html">
+                        <span class="menu-icon">👨‍🏫</span> Instructor Switch
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="/" class="btn btn-secondary btn-sm btn-block">← Return Home</a>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard-main">
+            <div class="dashboard-header-banner">
+                <div>
+                    <h2>Welcome to Your Learning Workspace!</h2>
+                    <p>Track your enrolled curriculum, resume where you left off, and boost your engineering capabilities.</p>
+                </div>
+                <a href="/courses.html" class="btn btn-primary btn-large">+ Find More Courses</a>
+            </div>
+
+            <!-- Metrics Row -->
+            <div class="metrics-row">
+                <div class="metric-card">
+                    <div class="metric-icon-box">📚</div>
+                    <div class="metric-data">
+                        <div class="metric-val" id="statStudentEnrolled">0</div>
+                        <div class="metric-title">Enrolled Courses</div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon-box" style="background:#d1fae5; color:#065f46;">🏆</div>
+                    <div class="metric-data">
+                        <div class="metric-val" id="statStudentCompleted">0</div>
+                        <div class="metric-title">Completed Courses</div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon-box" style="background:#e0f2fe; color:#0284c7;">⏱️</div>
+                    <div class="metric-data">
+                        <div class="metric-val" id="statStudentHours">0</div>
+                        <div class="metric-title">Lessons Completed</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enrolled Courses Progress Section -->
+            <div class="content-card">
+                <div class="content-card-header">
+                    <div>
+                        <h3>My Enrolled Courses</h3>
+                        <p class="text-muted" style="font-size:0.88rem;">Keep up the streak and complete your lessons</p>
+                    </div>
+                    <a href="/my-courses.html" class="btn btn-outline-purple btn-sm">View All in My Courses →</a>
+                </div>
+
+                <div class="course-grid" id="studentDashboardCourses">
+                    <!-- Populated dynamically via public/js/dashboard.js -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+            <div>&copy; 2026 Online Course Learning Management System.</div>
+            <div class="developer-credit">
+                Project Title: <strong>Online Course Learning Management System</strong> | Developed by <strong>Lokesh Yadav</strong>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/public/js/main.js"></script>
+    <script src="/public/js/dashboard.js"></script>
+</body>
+</html>

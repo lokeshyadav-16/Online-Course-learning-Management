@@ -1,0 +1,146 @@
+/* =========================================================
+   Online Course Learning Management System - Navbar Styles
+   Project Owner: Lokesh Yadav
+   Theme: Dark Navy & Purple Accents
+   ========================================================= */
+
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--card-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.nav-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--navy-900);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.brand-logo .logo-icon {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.brand-logo .logo-text span {
+    color: var(--purple-600);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    position: relative;
+    padding: 6px 0;
+    transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--purple-600);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2.5px;
+    background: var(--purple-gradient);
+    border-radius: 9999px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.user-badge-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--purple-50);
+    padding: 6px 14px;
+    border-radius: 9999px;
+    border: 1px solid var(--purple-100);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.user-badge-pill:hover {
+    background-color: var(--purple-100);
+}
+
+.user-badge-pill .user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--purple-gradient);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.user-badge-pill .user-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--navy-900);
+}
+
+.user-badge-pill .user-role {
+    font-size: 0.75rem;
+    background: var(--purple-600);
+    color: #ffffff;
+    padding: 2px 7px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.nav-toggle span {
+    display: block;
+    height: 2.5px;
+    width: 100%;
+    background-color: var(--navy-900);
+    border-radius: 3px;
+    transition: var(--transition);
+}

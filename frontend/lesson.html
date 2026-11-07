@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom | Online Course Learning Management System</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/navbar.css">
+    <link rel="stylesheet" href="/public/css/lesson.css">
+    <link rel="stylesheet" href="/public/css/responsive.css">
+</head>
+<body style="background-color: #0f172a;">
+    <!-- Classroom Top Bar -->
+    <header class="classroom-header">
+        <a href="/courses.html" id="lessonCourseTitleLink" class="course-link">
+            ← Back to Course Overview
+        </a>
+        <div class="classroom-progress-info">
+            <span class="progress-text" id="lessonProgressBarText">0% Complete</span>
+            <div class="classroom-progress-bar">
+                <div id="lessonProgressBarFill" style="height:100%; width:0%; background:var(--purple-gradient); transition: width 0.3s ease;"></div>
+            </div>
+            <a href="/my-courses.html" class="btn btn-secondary btn-sm" style="padding:4px 10px; font-size:0.8rem;">
+                My Courses
+            </a>
+        </div>
+    </header>
+
+    <!-- Classroom Main Stage & Curriculum Sidebar -->
+    <div class="classroom-layout">
+        <!-- Main Stage (Player & Lecture Notes) -->
+        <main class="classroom-main">
+            <!-- Video Player -->
+            <div class="video-player-container">
+                <div class="video-placeholder-box">
+                    <div class="play-icon">▶</div>
+                    <h3 style="font-size:1.5rem; margin-bottom:6px; color:#ffffff;">Lesson Video Lecture</h3>
+                    <p style="color:#94a3b8; font-size:0.95rem; max-width:500px;">
+                        Interactive video streaming player with step-by-step code demonstrations and architectural explanations.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Controls & Action Toolbar -->
+            <div class="classroom-controls">
+                <div class="lesson-info">
+                    <div class="lesson-breadcrumb" id="activeLessonBreadcrumb">Course • Module</div>
+                    <h2 id="activeLessonTitle" style="color:var(--navy-900);">Loading Lesson...</h2>
+                </div>
+                <div class="action-buttons">
+                    <button id="prevLessonBtn" class="btn btn-secondary btn-sm">← Previous</button>
+                    <button id="toggleCompleteLessonBtn" class="btn btn-primary btn-sm">Mark as Completed</button>
+                    <button id="nextLessonBtn" class="btn btn-secondary btn-sm">Next Lesson →</button>
+                </div>
+            </div>
+
+            <!-- Lesson Tabs -->
+            <div class="classroom-tabs">
+                <div class="tab-nav">
+                    <button class="tab-btn active" data-tab="tabNotes">Lesson Notes & Code</button>
+                    <button class="tab-btn" data-tab="tabResources">Downloadable Materials (2)</button>
+                    <button class="tab-btn" data-tab="tabDiscussion">Q&A Discussion</button>
+                </div>
+
+                <!-- Tab 1: Notes -->
+                <div class="tab-content tab-pane" id="tabNotes">
+                    <div id="lessonNotesContent">
+                        <!-- Loaded dynamically via public/js/lesson.js -->
+                    </div>
+                </div>
+
+                <!-- Tab 2: Resources -->
+                <div class="tab-content tab-pane d-none" id="tabResources">
+                    <h3 style="margin-bottom:14px; color:var(--navy-900);">Module Attachments & Exercises</h3>
+                    <div style="display:flex; flex-direction:column; gap:12px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; padding:14px; background:#f8fafc; border-radius:10px; border:1px solid var(--card-border);">
+                            <div>
+                                <strong style="color:var(--navy-900);">📄 Lesson_CheatSheet_Architecture.pdf</strong>
+                                <div class="text-muted" style="font-size:0.8rem;">PDF Document • 2.4 MB</div>
+                            </div>
+                            <button class="btn btn-outline-purple btn-sm" onclick="alert('Download simulated: Lesson_CheatSheet_Architecture.pdf')">Download File</button>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; padding:14px; background:#f8fafc; border-radius:10px; border:1px solid var(--card-border);">
+                            <div>
+                                <strong style="color:var(--navy-900);">📦 Starter_Source_Code.zip</strong>
+                                <div class="text-muted" style="font-size:0.8rem;">ZIP Archive • 1.1 MB</div>
+                            </div>
+                            <button class="btn btn-outline-purple btn-sm" onclick="alert('Download simulated: Starter_Source_Code.zip')">Download File</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Q&A -->
+                <div class="tab-content tab-pane d-none" id="tabDiscussion">
+                    <h3 style="margin-bottom:14px; color:var(--navy-900);">Student Questions & Instructor Feedback</h3>
+                    <div style="background:#f8fafc; padding:16px; border-radius:10px; margin-bottom:16px; border:1px solid var(--card-border);">
+                        <strong style="color:var(--navy-900);">Sarah Jenkins:</strong>
+                        <p style="font-size:0.92rem; margin:6px 0;">How does connection pooling in mysql2 handle network dropouts?</p>
+                        <div style="background:#ede9fe; padding:10px 14px; border-radius:8px; font-size:0.88rem; color:#5b21b6; margin-top:8px;">
+                            <strong>👨‍🏫 Lokesh Yadav (Instructor):</strong> The pool automatically cleans up dead connections and attempts reconnection via the `enableKeepAlive` parameter!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Curriculum Navigation Sidebar -->
+        <aside class="classroom-sidebar">
+            <div class="sidebar-header">
+                <h3>Course Curriculum</h3>
+                <span class="text-muted" style="font-size:0.82rem;">Click any module to jump directly to it</span>
+            </div>
+            <ul class="curriculum-list" id="classroomCurriculumList">
+                <!-- Dynamically rendered via public/js/lesson.js -->
+            </ul>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+            <div>&copy; 2026 Online Course Learning Management System.</div>
+            <div class="developer-credit">
+                Project Title: <strong>Online Course Learning Management System</strong> | Developed by <strong>Lokesh Yadav</strong>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/public/js/main.js"></script>
+    <script src="/public/js/lesson.js"></script>
+</body>
+</html>
